@@ -35,6 +35,10 @@ namespace UnitTests
 
             //Assert
             Assert.That(price, Is.EqualTo(27));
+
+            mockDiscount.Verify(x => x.CalculateDiscount(It.IsAny<UserAccount>()), Times.Once);
+
+            mockDiscount.VerifyNoOtherCalls();
         }
 
         [Test]
@@ -48,6 +52,10 @@ namespace UnitTests
 
             //Assert
             Assert.That(price, Is.EqualTo(7));
+
+            mockDiscount.Verify(x => x.CalculateDiscount(It.IsAny<UserAccount>()), Times.Once);
+
+            mockDiscount.VerifyNoOtherCalls();
         }
 
         [Test]
@@ -62,6 +70,10 @@ namespace UnitTests
 
             //Assert
             Assert.That(price, Is.EqualTo(20));
+
+            mockDiscount.Verify(x => x.CalculateDiscount(It.IsAny<UserAccount>()), Times.Once);
+
+            mockDiscount.VerifyNoOtherCalls();
         }
     }
 }
